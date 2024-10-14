@@ -10,13 +10,14 @@ describe("Open with cypress", () => {
   });
 });
 
+//extra priklad navic
 describe("Automationstore", () => {
-  it.only("Item in basket", () => {
+  it("Item in basket", () => {
     cy.visit(`https://automationteststore.com/`);
     cy.get(
       "#block_frame_bestsellers_1771 > .thumbnails > :nth-child(1) > .thumbnail > .pricetag > .productcart > .fa"
     ).click();
     cy.get(".block_7 > .nav > .dropdown > .dropdown-toggle").click();
-    cy.get("#cart_quantity50").click().clear;
+    cy.get(":nth-child(7) > .btn").click();
   });
 });
