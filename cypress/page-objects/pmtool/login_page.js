@@ -1,3 +1,5 @@
+import { DashboardPage } from "./dashboard_page";
+
 export class LoginPage {
   constructor() {
     this.url = "https://tredgate.com/pmtool";
@@ -8,18 +10,22 @@ export class LoginPage {
 
   openPmtool() {
     cy.visit(this.url);
+    return this;
   }
 
   typeUsername(username) {
     cy.get(this.usernameInput).type(username);
+    return this;
   }
 
   typePassword(password) {
     cy.get(this.passwordInput).type(password);
+    return this;
   }
 
   clickLogin() {
     cy.get(this.loginButton).click();
+    return new DashboardPage();
   }
 
   //jednotlive metody lze shluovat do jednoho jako napr predchozi 4 dát jako login
