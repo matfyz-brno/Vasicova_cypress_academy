@@ -1,9 +1,11 @@
 import { LoginPage } from "./login_page";
+import { ProjectsPage } from "./project_page";
 
 export class DashboardPage {
   constructor() {
     this.profileButton = "#user_dropdown";
     this.logoutButton = "#logout";
+    this.projectButton = "#Projects";
   }
   openProfile() {
     cy.get(this.profileButton).click();
@@ -12,5 +14,9 @@ export class DashboardPage {
   clickLogout() {
     cy.get(this.logoutButton).click();
     return new LoginPage();
+  }
+  clickProject() {
+    cy.get(this.projectButton).click();
+    return new ProjectsPage();
   }
 }
