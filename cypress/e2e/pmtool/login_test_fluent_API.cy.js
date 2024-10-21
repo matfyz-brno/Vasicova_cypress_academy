@@ -10,4 +10,18 @@ describe("Fluent Login Tests", () => {
       .openProfile()
       .clickLogout();
   });
+  it("Login to Pmtool and logout using Fluent API, two times", () => {
+    new LoginPage()
+      .openPmtool()
+      .typeUsername("cypress_zima_2024")
+      .typePassword("Zima2024Cypress")
+      .clickLogin()
+      .openProfile()
+      .clickLogout()
+      .typeUsername("cypress_zima_2024")
+      .typePassword("Zima2024Cypress")
+      .clickLogin()
+      .openProfile()
+      .clickLogout();
+  });
 });
