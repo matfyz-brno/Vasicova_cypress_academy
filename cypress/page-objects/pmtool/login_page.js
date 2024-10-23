@@ -1,4 +1,5 @@
 import { DashboardPage } from "./dashboard_page";
+import { LostPasswordPage } from "./lost_password_page";
 
 export class LoginPage {
   constructor() {
@@ -6,6 +7,7 @@ export class LoginPage {
     this.usernameInput = "#username"; //nesmi byt cypress get cy.get
     this.passwordInput = "#password";
     this.loginButton = ".btn";
+    this.lostPassword = " #forget_password";
   }
 
   openPmtool() {
@@ -26,6 +28,11 @@ export class LoginPage {
   clickLogin() {
     cy.get(this.loginButton).click();
     return new DashboardPage();
+  }
+
+  clickLostPassword() {
+    cy.get(this.lostPassword).click();
+    return new LostPasswordPage();
   }
 
   //jednotlive metody lze shluovat do jednoho jako napr predchozi 4 dát jako login
