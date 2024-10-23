@@ -12,7 +12,7 @@ export class RegistrationPage {
     this.buttonContinue = "input[type='submit']";
   }
   openRegistrationPage() {
-    cy.visit("https://tredgate.com/eshop/index.php?route=account/register");
+    cy.visit(this.registrationUrl);
   }
   typeFirstName(firstName) {
     cy.get(this.fistNameInput).type(firstName);
