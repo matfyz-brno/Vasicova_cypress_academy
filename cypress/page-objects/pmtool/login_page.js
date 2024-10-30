@@ -6,6 +6,7 @@ export class LoginPage {
     this.usernameInput = "#username"; //nesmi byt cypress get cy.get
     this.passwordInput = "#password";
     this.loginButton = ".btn";
+    this.pageHeader = "h3.form-title";
   }
 
   openPmtool() {
@@ -34,5 +35,10 @@ export class LoginPage {
     this.typeUsername(username);
     this.typePassword(password);
     this.clickLogin();
+  }
+
+  pageHeaderHaveText(headerText) {
+    cy.get(this.pageHeader).should("have.text", headerText);
+    return this;
   }
 }
