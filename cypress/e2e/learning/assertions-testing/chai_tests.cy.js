@@ -80,8 +80,13 @@ describe("Chai Tests(Test Assertions)", () => {
     //co mame udelat ve should + jmeno atributu + co ma byt obsahem atributu
   });
 
-  it.only("Check atribute", () => {
+  it("Check atribute", () => {
     cy.get("#password").should("have.attr", "placeholder", "Password");
     //co mame udelat ve should + jmeno atributu ktery mame zkontrolovat + co ma byt obsahem atributu
+  });
+
+  it.only("Negative Assert not exist", () => {
+    cy.get(".alert").should("not.exist");
+    //nelze pouzit not visibile protoze ten kontrole ze je to v existuje kodu ale neni viditelny na strance
   });
 });
