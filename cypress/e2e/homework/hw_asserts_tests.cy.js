@@ -17,4 +17,8 @@ describe("Using Asserts in PageObjects", () => {
       .checkTextLogin("Login")
       .checkTextPasswordLost("Password forgotten?");
   });
+
+  it("Logo is visible", () => {
+    new LoginPage().logoVisibility();
+  });
 });

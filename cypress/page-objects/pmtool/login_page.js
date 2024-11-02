@@ -9,6 +9,7 @@ export class LoginPage {
     this.pageHeader = "h3.form-title";
     this.rememberCheckbox = ".checkbox";
     this.lostPassword = "#forget_password";
+    this.logoImage = ".login-page-logo img";
   }
 
   openPmtool() {
@@ -66,5 +67,9 @@ export class LoginPage {
   checkTextPasswordLost(text) {
     cy.get(this.lostPassword).should("have.text", text);
     return this;
+  }
+
+  logoVisibility() {
+    cy.get(this.logoImage).should("be.visible");
   }
 }
