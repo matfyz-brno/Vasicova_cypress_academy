@@ -9,7 +9,7 @@ describe("Create new Project, with complete login", () => {
       .typeUsername("cypress_zima_2024")
       .typePassword("Zima2024Cypress")
       .clickLogin()
-      .clickProject()
+      .openProject()
       .clickAddProjectBtn()
       .fillName(projectName)
       .clickSaveBtn();
