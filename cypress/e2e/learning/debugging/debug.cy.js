@@ -4,7 +4,7 @@ import { LoginPage } from "../../../page-objects/pmtool/login_page.js";
 describe("Debugging", () => {
   it("Using Debug Mode in Cypress", () => {
     cy.visit("https://tredgate.com/pmtool");
-    cy.get("#username").type("cypress_zima_2024").debug(); // Debug funkce type()
+    cy.get("#username").type("cypress_zima_2024").debug(); // Debug funkce type() a zstavuje se pokud u toho máme otevřená devTool
     cy.get("#password").debug().type("Zima2024Cypress"); // Debug funkce get()
     cy.get(".btn").click().debug(); // Debug funkce click()
   });
