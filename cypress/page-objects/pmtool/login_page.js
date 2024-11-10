@@ -7,6 +7,9 @@ export class LoginPage {
     this.passwordInput = "#password";
     this.loginButton = ".btn";
     this.pageHeader = "h3.form-title";
+    this.rememberCheckbox = ".checkbox";
+    this.lostPassword = "#forget_password";
+    this.logoImage = ".login-page-logo img";
   }
 
   openPmtool() {
@@ -40,5 +43,33 @@ export class LoginPage {
   pageHeaderHaveText(headerText) {
     cy.get(this.pageHeader).should("have.text", headerText);
     return this;
+  }
+
+  checkUsernamePlaceholder(placeholder) {
+    cy.get(this.usernameInput).should("have.attr", "placeholder", placeholder);
+    return this;
+  }
+
+  checkPasswordPlaceholder(placeholder) {
+    cy.get(this.passwordInput).should("have.attr", "placeholder", placeholder);
+    return this;
+  }
+
+  checkTextRememeber(text) {
+    cy.get(this.rememberCheckbox).should("contain.text", text);
+    return this;
+  }
+  checkTextLogin(text) {
+    cy.get(this.loginButton).should("have.text", text);
+    return this;
+  }
+
+  checkTextPasswordLost(text) {
+    cy.get(this.lostPassword).should("have.text", text);
+    return this;
+  }
+
+  logoVisibility() {
+    cy.get(this.logoImage).should("be.visible");
   }
 }
