@@ -19,7 +19,7 @@ export class DashboardPage extends HeaderSection {
   clickLogout() {
     cy.get(this.logoutButton).click();
     return new LoginPage();*/
-  //v komentu je kvuli polymofismu a deden podle super funkce
+  //v komentu je kvuli polymofismu a dědení podle super funkce
 
   /*openProject() {
     cy.get(this.projectButton).click();

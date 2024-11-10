@@ -1,21 +1,18 @@
-import { RegistrationPageObject } from "./registration_page";
+import { HeaderSectionEshop } from "./common/header_section_eshop";
+import { Product1Page } from "./product1_page";
 
-export class EshopHomePage {
+export class EshopHomePage extends HeaderSectionEshop {
   constructor() {
+    super();
     this.urlEshop = "https://tredgate.com/eshop/";
-    this.accountIcon = ".dropdown > .dropdown-toggle > .fa";
-    this.registerIcon = ".dropdown-menu > :nth-child(1) > a";
+    this.product1 = ".image img[title='iPhone']";
   }
   openEshopHomePage() {
     cy.visit(this.urlEshop);
     return this;
   }
-  clickAccountIcon() {
-    cy.get(this.accountIcon).click();
-    return this;
-  }
-  clickRegisterIcon() {
-    cy.get(this.registerIcon).click();
-    return new RegistrationPageObject();
+  openProduct1Page() {
+    cy.get(this.product1).click();
+    return new Product1Page();
   }
 }
