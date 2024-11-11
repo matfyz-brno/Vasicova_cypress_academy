@@ -1,3 +1,21 @@
 import { HeaderSection } from "../common/header_section.js";
+import { CreateTaskModal } from "./create_task_modal.js";
+import { ProjectInfoPage } from "./project_info_page.js";
 
-export class TasksPage extends HeaderSection {}
+export class TasksPage extends HeaderSection {
+  constructor() {
+    super();
+    this.addNewTaskBtn = '[test_id="Add Task"]';
+    this.projectInfoAnchor = '//a[text()="Project Info"]';
+  }
+
+  clickAddNewTaskBtn() {
+    cy.get(this.addNewTaskBtn).click();
+    return new CreateTaskModal();
+  }
+
+  clickProjectInfo() {
+    cy.xpath(this.projectInfoAnchor).click();
+    return new ProjectInfoPage();
+  }
+}
