@@ -1,13 +1,13 @@
 import { HeaderSection } from "./common/header_section";
 //import { LoginPage } from "./login_page";
-import { ProjectsPage } from "./project_page";
+//import { ProjectsPage } from "./project_page";
 
 export class DashboardPage extends HeaderSection {
   constructor() {
     super();
     //this.profileButton = "#user_dropdown";
     //this.logoutButton = "#logout";
-    this.projectButton = "#Projects";
+    //this.projectButton = "#Projects";
     this.welcomePageHeader = "#welcome-page-header";
     cy.get(this.welcomePageHeader).should("be.visible");
     //davam do contructoru jen ve chvili, kdy opravdu vim ze se tento text necte ihned po otevreni stranky
