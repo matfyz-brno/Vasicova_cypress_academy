@@ -20,6 +20,8 @@ describe("Automation Test Store", () => {
       lastName: fakeLastName,
     });
     const fakePassword = faker.internet.password();
+    const state = "Czech Republic";
+    const region = "Vysocina";
     new HomePageAutomationStore()
       .openStorePage()
       .openLoginPage()
@@ -34,8 +36,10 @@ describe("Automation Test Store", () => {
       .typeAddress2(fakeAddress2)
       .typeCity(fakeCity)
       .typeZipCode(fakeZipCode)
-      .selectCountry()
-      .selectRegion()
+      .selectCountry(state)
+      .countryHaveValue(state)
+      .selectRegion(region)
+      .regionHaveValue(region)
       .typeLoginName(fakeLoginName)
       .typePassword(fakePassword)
       .typePasswordConfirm(fakePassword)

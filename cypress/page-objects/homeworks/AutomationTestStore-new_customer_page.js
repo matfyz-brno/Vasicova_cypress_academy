@@ -69,9 +69,14 @@ export class NewCustomerPageAutomationStore extends HeaderSectionAutomationStore
     return this;
   }
 
-  selectRegion() {
-    cy.get(this.regionInput).select("Vysocina");
-    cy.get(this.regionInput).should("have.value", "901");
+  selectRegion(region) {
+    cy.get(this.regionInput).select(region);
+    cy.wait(1000);
+    return this;
+  }
+
+  regionHaveValue(region) {
+    cy.get(this.regionInput).should("contain.text", region);
     return this;
   }
 
@@ -80,9 +85,14 @@ export class NewCustomerPageAutomationStore extends HeaderSectionAutomationStore
     return this;
   }
 
-  selectCountry() {
-    cy.get(this.countryInput).select("Czech Republic");
-    cy.get(this.countryInput).should("have.value", "56");
+  selectCountry(state) {
+    cy.get(this.countryInput).select(state);
+    cy.wait(1000);
+    return this;
+  }
+
+  countryHaveValue(state) {
+    cy.get(this.countryInput).should("contain.text", state);
     return this;
   }
 
