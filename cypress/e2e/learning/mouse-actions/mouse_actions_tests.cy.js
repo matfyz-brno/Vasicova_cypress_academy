@@ -25,4 +25,14 @@ describe("Mouse Actions Tests", () => {
       .trigger("mouseup", { force: true });
     //ukonceni drzeni mysi, musim pouzit force,nebot puvodni drzeni mysi bylo na jinem elementu
   });
+
+  it("Real hoover", () => {
+    cy.visit("https://www.webdriveruniversity.com/Actions/index.html");
+    cy.get("#div-hover > .dropdown.hover")
+      .realHover()
+      .then((hoveredElement) => {
+        cy.wait(4000); // ? čekání 4 sekundy, abychom v Cypress viděli, že je prvek otevřený. V reálném životě nebudete dávat.
+        cy.get(".dropdown.hover .dropdown-content a").click();
+      });
+  });
 });
