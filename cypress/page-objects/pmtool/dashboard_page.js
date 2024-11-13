@@ -4,12 +4,13 @@ import { ProjectsPage } from "./project_page";
 
 export class DashboardPage extends HeaderSection {
   constructor() {
-    super();
+    super("module=dashboard/dashboard");
     //this.profileButton = "#user_dropdown";
     //this.logoutButton = "#logout";
-    this.projectButton = "#Projects";
+    // this.projectButton = "#Projects";
     this.welcomePageHeader = "#welcome-page-header";
-    cy.get(this.welcomePageHeader).should("be.visible");
+    //cy.get(this.welcomePageHeader).should("be.visible"); >> vynecháme kontrolu kvuli BasePage,
+    // ? construktor by prijimal isOpened, akorát by se provedla kontrola az by byla stranka byla otevrena a ne drive.
     //davam do contructoru jen ve chvili, kdy opravdu vim ze se tento text necte ihned po otevreni stranky
   }
   /*openProfile() {

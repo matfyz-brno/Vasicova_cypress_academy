@@ -7,6 +7,10 @@ export class LoginPage {
     this.passwordInput = "#password";
     this.loginButton = ".btn";
     this.pageHeader = "h3.form-title";
+    this.usernameErrorLabel = "#username-error";
+    this.passwordErrorLabel = "#password-error";
+    this.logoImg = ".login-page-logo";
+    this.titleText = ".form-title";
   }
 
   openPmtool() {

@@ -1,8 +1,9 @@
 import { HeaderSection } from "../common/header_section.js";
 
 export class ProjectInfoPage extends HeaderSection {
-  constructor() {
-    super();
+  constructor(projectId = "") {
+    //tohle znamena ze paramet projctID je VOLITELNY {
+    super(`module=items/info&path=21-${projectId}`);
 
     this.projectTitle = ".portlet-title .caption";
     this.startDateXpath = '//th[text()="Start Date"]/../td';
