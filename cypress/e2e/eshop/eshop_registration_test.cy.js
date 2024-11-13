@@ -1,7 +1,7 @@
 import { faker } from "@faker-js/faker";
 import { EshopHomePage } from "../../page-objects/eshop/home_page";
 describe("Eshop page and registration new user", () => {
-  it.skip("Open Eshop page and fill in registration form", () => {
+  it("Open Eshop page and fill in registration form", () => {
     const randomFirstName = faker.person.firstName();
     const randomLastName = faker.person.lastName();
     const randomEmail = faker.internet.exampleEmail({
