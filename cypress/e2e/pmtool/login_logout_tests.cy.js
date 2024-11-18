@@ -17,7 +17,7 @@ describe("Login and logout Test", () => {
     loginPage.typeUsername("cypress_zima_2024");
     loginPage.typePassword("Zima2024Cypress");
     loginPage.clickLogin();
-    dashboardPage.openProfile;
+    dashboardPage.clickProfile;
     dashboardPage.clickLogout;
   });
 });

@@ -12,16 +12,16 @@ describe("Fluent Login Tests", () => {
       .clickLogin();
   });
   it("Login to Pmtool and logout using Fluent API", () => {
-    new DashboardPage().openProfile().clickLogout();
+    new DashboardPage().clickProfile().clickLogout();
   });
   it("Login to Pmtool and logout using Fluent API, two times", () => {
     new DashboardPage()
-      .openProfile()
+      .clickProfile()
       .clickLogout()
       .typeUsername(username)
       .typePassword(password)
       .clickLogin()
-      .openProfile()
+      .clickProfile()
       .clickLogout();
   });
 });

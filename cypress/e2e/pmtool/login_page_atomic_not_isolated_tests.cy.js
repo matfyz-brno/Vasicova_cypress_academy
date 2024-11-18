@@ -1,9 +1,17 @@
 import { LoginPage } from "../../page-objects/pmtool/login_page.js";
 
-describe("Login Page Atomic Tests", () => {
+describe("Login Page Atomic Tests", { testIsolation: false }, () => {
   const loginPage = new LoginPage();
 
-  beforeEach(() => {
+  //before, protoze nema smysls davat pred kazdym kdyz to neni nutne, staci jen to prvni
+  before(() => {
+    //tyto tři funkce jsou nutne, aby ten vypnuty izolovany test se umel prihlasit a vycisitit zbytky
+    cy.clearAllCookies();
+    cy.clearAllLocalStorage();
+    cy.clearAllSessionStorage();
+
+    const username = Cypress.env("pmtool_username"); //velké Cypress je tam protože si to vytahuje z git ingnore souboru a je to object
+    const password = Cypress.env("pmtool_password");
     new LoginPage().openPmtool();
   });
   //! User name sekce
@@ -23,6 +31,7 @@ describe("Login Page Atomic Tests", () => {
     });
 
     it("Empty Validation Message", () => {
+      loginPage.usernameInput.clear(); //zajisti clear daneho elementu
       loginPage.clickLogin();
       loginPage.usernameErrorLabel.haveText("This field is required!");
     });
@@ -59,7 +68,7 @@ describe("Login Page Atomic Tests", () => {
     });
 
     it("Have text", () => {
-      loginPage.titleText.haveText("Login");
+      loginPage.pageHeader.haveText("Login");
     });
   });
 });

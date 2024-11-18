@@ -13,7 +13,7 @@ export class DashboardPage extends HeaderSection {
     // ? construktor by prijimal isOpened, akorát by se provedla kontrola az by byla stranka byla otevrena a ne drive.
     //davam do contructoru jen ve chvili, kdy opravdu vim ze se tento text necte ihned po otevreni stranky
   }
-  /*openProfile() {
+  /*clickProfile() {
     cy.get(this.profileButton).click();
     return this;
   }

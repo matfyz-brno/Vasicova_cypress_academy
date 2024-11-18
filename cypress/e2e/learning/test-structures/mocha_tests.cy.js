@@ -11,7 +11,7 @@ describe("Mocha Tests", () => {
       .typeUsername("cypress_zima_2024")
       .typePassword("Zima2024Cypress")
       .clickLogin()
-      .openProfile()
+      .clickProfile()
       .clickLogout();
   });
 
@@ -21,7 +21,7 @@ describe("Mocha Tests", () => {
       .typeUsername("cypress_zima_2024")
       .typePassword("Zima2024Cypress")
       .clickLogin()
-      .openProfile()
+      .clickProfile()
       .clickLogout()
       .typeUsername("cypress_zima_2024")
       .typePassword("Zima2024Cypress")
