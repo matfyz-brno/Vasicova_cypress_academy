@@ -1,9 +1,9 @@
-import { HeaderSection } from "./common/header_section";
+import { BasePage } from "./common/base_page";
 import { TasksPage } from "./projects/tasks_page";
 
-export class ProjectModal extends HeaderSection {
+export class ProjectModal extends BasePage {
   constructor() {
-    super();
+    super("module=items/form&path=21");
     this.priorityField = '[data-testid="Priority"] select';
     this.statusField = '[data-testid="Status"] select';
     this.nameField = '[data-testid="Name"] input';

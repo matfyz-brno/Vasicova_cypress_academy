@@ -2,8 +2,8 @@ import { HeaderSection } from "../common/header_section";
 import { TasksPage } from "./tasks_page";
 
 export class CreateTaskModal extends HeaderSection {
-  constructor() {
-    super();
+  constructor(projectId = "") {
+    super(`module=items/form&path=21-${projectId}/22`);
     this.taskTypeSelect = '[data-testid="Type"] select';
     this.taskNameInput = '[data-testid="Name"] input';
     this.taskStatusSelect = '[data-testid="Status"] select';
