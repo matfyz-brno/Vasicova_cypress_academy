@@ -1,0 +1,19 @@
+[
+  {
+    "username_prefix": "Test-Manager_",
+    "password": "Manager12345*",
+    "role": "Manager"
+  },
+
+  {
+    "username_prefix": "Test-Client_",
+    "password": "Client12345*",
+    "role": "Client"
+  },
+
+  {
+    "username_prefix": "Test-Developer_",
+    "password": "Developer12345*",
+    "role": "Developer"
+  }
+]
