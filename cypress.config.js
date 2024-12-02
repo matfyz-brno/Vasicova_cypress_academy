@@ -11,7 +11,8 @@ module.exports = defineConfig({
   },
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      require("@cypress/grep/src/plugin")(config);
+      return config;
     },
     watchForFileChanges: false, //zaridi, ze se nebude cypress restartovat po kazde zmene
     defaultCommandTimeout: 10000, //zmena time out

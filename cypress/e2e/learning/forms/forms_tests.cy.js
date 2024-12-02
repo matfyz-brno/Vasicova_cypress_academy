@@ -2,7 +2,7 @@ describe("Forms tests", () => {
   beforeEach(() => {
     cy.visit("http://tredgate.com/webtrain/registration.html");
   });
-  it("Check radio button", () => {
+  it("Check radio button", { tags: "@smoke" }, () => {
     cy.get("#basic").check();
     cy.get("#basic").should("be.checked"); // kontrola že je radio button zakliknutý
     cy.get("input[name='subscription']").check("premium"); //více přepoužitelný pro page objects

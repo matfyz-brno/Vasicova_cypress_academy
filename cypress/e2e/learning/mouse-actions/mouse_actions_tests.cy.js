@@ -1,4 +1,4 @@
-describe("Mouse Actions Tests", () => {
+describe("Mouse Actions Tests", { tags: "@smoke" }, () => {
   it("Scroll Into View", () => {
     cy.visit("https://tredgate.com/webtrain");
     cy.get("h1").scrollIntoView().should("be.visible"); //kdyz je nutne nekde zascrollovat, kdyz to neni viditelne v nejakem boxu, ktery je potreba posuvnikem posunout aby text byl citelny
