@@ -1,7 +1,7 @@
 import { DashboardPage } from "../../page-objects/pmtool/dashboard_page";
 import { LoginPage } from "../../page-objects/pmtool/login_page";
 
-describe("Login and logout Test", () => {
+describe("Login and logout Test", { tags: "@e2e" }, () => {
   it("Login to PMTool", () => {
     const loginPage = new LoginPage();
     loginPage.openPmtool();
